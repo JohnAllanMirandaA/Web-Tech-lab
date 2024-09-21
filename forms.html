@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Guide Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .form-section {
+            margin-top: 50px;
+        }
+    </style>
+    <script>
+        function validate() {
+            var name = document.forms["Tour"]["name"].value;
+            var email = document.forms["Tour"]["email"].value;
+            var age = document.forms["Tour"]["age"].value;
+            var experience = document.forms["Tour"]["experience"].value;
+            var contact = document.forms["Tour"]["contact"].value;
+            var city = document.forms["Tour"]["city"].value;
+            var state = document.forms["Tour"]["state"].value;
+            var area = document.forms["Tour"]["area"].value;
+            
+            // Validate name, city, state, area (only alphabets)
+            var alphabetRegex = /^[A-Za-z\s]+$/;
+            if (!name.match(alphabetRegex)) {
+                alert("Please enter a valid name with alphabets only.");
+                document.Tour.name.focus();
+                return false;
+            }
+            if (!city.match(alphabetRegex)) {
+                alert("Please enter a valid city name with alphabets only.");
+                document.Tour.city.focus();
+                return false;
+            }
+            if (!state.match(alphabetRegex)) {
+                alert("Please enter a valid state name with alphabets only.");
+                document.Tour.state.focus();
+                return false;
+            }
+            if (!area.match(alphabetRegex)) {
+                alert("Please enter a valid area name with alphabets only.");
+                document.Tour.area.focus();
+                return false;
+            }
+
+            // Validate age and experience (numbers only)
+            if (isNaN(age) || age < 18 || age > 100) {
+                alert("Please enter a valid age between 18 and 100.");
+                document.Tour.age.focus();
+                return false;
+            }
+            if (isNaN(experience) || experience < 5) {
+                alert("Experience must be at least 5 years.");
+                document.Tour.experience.focus();
+                return false;
+            }
+
+            // Validate contact number (10 digits)
+            var contactRegex = /^[0-9]{10}$/;
+            if (!contact.match(contactRegex)) {
+                alert("Please enter a valid 10-digit phone number.");
+                document.Tour.contact.focus();
+                return false;
+            }
+
+            // Validate email format
+            var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!email.match(emailRegex)) {
+                alert("Please enter a valid email address in the format xxx@gmail.com.");
+                document.Tour.email.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container form-section">
+        <h1>Tourist Guide Form</h1>
+        <form name="Tour" onsubmit="return validate()">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" name="age" placeholder="Enter age" required>
+            </div>
+            <div class="form-group">
+                <label for="experience">Years of Experience:</label>
+                <input type="number" class="form-control" name="experience" placeholder="Enter years of experience (min 5 years)" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number:</label>
+                <input type="tel" class="form-control" name="contact" placeholder="Enter 10-digit phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="area">Area:</label>
+                <input type="text" class="form-control" name="area" placeholder="Enter area" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" class="form-control" name="city" placeholder="Enter city" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" class="form-control" name="state" placeholder="Enter state" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

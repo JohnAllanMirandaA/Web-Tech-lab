@@ -17,6 +17,7 @@
             align-items: center;
             min-height: 100vh;
             box-sizing: border-box;
+            transition: background-color 0.5s ease;
         }
 
         h1 {
@@ -25,7 +26,6 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
-        /* Center and align the image container */
         .image-container {
             position: relative;
             width: 300px;
@@ -52,7 +52,7 @@
 
         .text {
             position: absolute;
-            top: -30px; /* Positioned directly above the image */
+            top: -30px;
             left: 50%;
             transform: translateX(-50%);
             font-size: 1.5em;
@@ -65,9 +65,8 @@
             opacity: 1;
         }
 
-        /* Ensure content below moves down when the image moves */
         .image-container:hover ~ .content {
-            transform: translateY(100px); /* Moves the content down by 100px */
+            transform: translateY(100px);
             transition: transform 0.5s ease;
         }
 
@@ -167,7 +166,16 @@
     </div>
 
     <script>
-        document.getElementById('timeButton').addEventListener('click', function() {
+        let isColorChanged = false;
+
+        document.body.addEventListener('click', function () {
+            if (!isColorChanged) {
+                document.body.style.backgroundColor = '#004d00';
+                isColorChanged = true;
+            }
+        });
+
+        document.getElementById('timeButton').addEventListener('click', function () {
             const now = new Date();
             const timeString = now.toLocaleTimeString();
             document.getElementById('timeDisplay').textContent = 'Current Time: ' + timeString;

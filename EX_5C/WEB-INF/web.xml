@@ -1,0 +1,37 @@
+<web-app>
+    <servlet>
+        <servlet-name>SessionWithHttpSession</servlet-name>
+        <servlet-class>SessionWithHttpSession</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionWithHttpSession</servlet-name>
+        <url-pattern>/SessionWithHttpSession</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SessionWithCookies</servlet-name>
+        <servlet-class>SessionWithCookies</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionWithCookies</servlet-name>
+        <url-pattern>/SessionWithCookies</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SessionWithUrlRewriting</servlet-name>
+        <servlet-class>SessionWithUrlRewriting</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionWithUrlRewriting</servlet-name>
+        <url-pattern>/SessionWithUrlRewriting</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SessionWithHiddenFields</servlet-name>
+        <servlet-class>SessionWithHiddenFields</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionWithHiddenFields</servlet-name>
+        <url-pattern>/SessionWithHiddenFields</url-pattern>
+    </servlet-mapping>
+</web-app>

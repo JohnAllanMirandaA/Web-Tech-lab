@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<leaders>
+    <leader>
+        <name>Mahatma Gandhi</name>
+        <achievement>Father of the Nation; Led India to Independence through non-violence</achievement>
+    </leader>
+    <leader>
+        <name>Dr. B.R. Ambedkar</name>
+        <achievement>Architect of the Indian Constitution</achievement>
+    </leader>
+    <leader>
+        <name>Subhas Chandra Bose</name>
+        <achievement>Founder of the Indian National Army (INA)</achievement>
+    </leader>
+    <leader>
+        <name>Jawaharlal Nehru</name>
+        <achievement>First Prime Minister of India; Advocate for industrialization</achievement>
+    </leader>
+    <leader>
+        <name>Sardar Vallabhbhai Patel</name>
+        <achievement>Unified India; Known as the Iron Man of India</achievement>
+    </leader>
+    <leader>
+        <name>APJ Abdul Kalam</name>
+        <achievement>Missile Man of India; Former President</achievement>
+    </leader>
+</leaders>
